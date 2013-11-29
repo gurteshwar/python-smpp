@@ -227,7 +227,7 @@ class TransceiverESME(ESME):
             self.logger.debug('submit_sm %s', pdu)
             self.conn.send(pdu.get_bin())
             submit_sm_resp = self.asyncRes(sequence_number)
-            #print self._is_ok(submit_sm_resp, 'submit_sm_resp')
+            return submit_sm_resp
         else:
             raise StateError('cannot submit sm in state %s', self.state)
 
